@@ -28,7 +28,7 @@ items:
       port: 8080
       targetPort: 8080
 - kind: Deployment
-  apiVersion: extensions/v1
+  apiVersion: apps/v1
   metadata:
     name: heketi
     labels:
