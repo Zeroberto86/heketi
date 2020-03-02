@@ -18,8 +18,10 @@ metadata:
   annotations:
     description: Exposes Heketi Service
 spec:
-  selector:
-    name: heketi
+selector:
+    matchLabels:
+      selector:
+        name: heketi
   ports:
   - name: heketi
     port: 8080
