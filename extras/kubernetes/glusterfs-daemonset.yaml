@@ -9,15 +9,22 @@ metadata:
     description: GlusterFS Daemon Set
     tags: glusterfs
 spec:
+  selector:
+    matchLabels:
+      glusterfs: deployment
   template:
     metadata:
       name: glusterfs
       labels:
+        glusterfs: deployment
         glusterfs-node: daemonset
     spec:
       nodeSelector:
         storagenode: glusterfs
       hostNetwork: true
+      tolerations:
+        - effect: NoSchedule
+          operator: Exists
       containers:
       - image: gluster/gluster-centos:latest
         imagePullPolicy: Always
