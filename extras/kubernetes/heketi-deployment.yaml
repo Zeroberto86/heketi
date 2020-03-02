@@ -36,9 +36,6 @@ metadata:
 spec:
   selector:
     matchLabels:
-      name: heketi
-      labels:
-        glusterfs: heketi-deployment
       app: heketi  
   replicas: 1
   template:
