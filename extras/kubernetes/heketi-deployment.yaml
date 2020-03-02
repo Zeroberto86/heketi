@@ -18,10 +18,8 @@ metadata:
   annotations:
     description: Exposes Heketi Service
 spec:
-selector:
-    matchLabels:
-      selector:
-        name: heketi
+  selector:
+    name: heketi
   ports:
   - name: heketi
     port: 8080
@@ -36,6 +34,11 @@ metadata:
   annotations:
     description: Defines how to deploy Heketi
 spec:
+  selector:
+    matchLabels:
+      name: heketi
+      labels:
+        glusterfs: heketi-deployment
   replicas: 1
   template:
     metadata:
