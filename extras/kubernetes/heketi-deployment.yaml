@@ -36,7 +36,8 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: heketi  
+      name: heketi
+      glusterfs: heketi-pod  
   replicas: 1
   template:
     metadata:
